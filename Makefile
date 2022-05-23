@@ -9,7 +9,7 @@ docker-run: ## Docker ストリーミング用コンテナを建てる
 
 stream-start: ## ストリーミングを開始する
 	xhost +
-	docker exec -it deepstream-lpdnet deepstream-app -c /app/src/deepstream_app_source1_trafficcamnet_lpdnet.txt
+	docker exec -it deepstream-lpdnet deepstream-app -c /app/src/deepstream_app_source1_lpdnet.txt
 
 docker-login: ## ストリーミングコンテナにログイン
 	docker exec -it deepstream-lpdnet bash

@@ -1,31 +1,31 @@
 [property]
 gpu-id=0
-net-scale-factor=1.0
-offsets=103.939;116.779;123.68
-model-color-format=1
+net-scale-factor=0.0039215697906911373
+model-color-format=0
 labelfile-path=usa_lpd_label.txt
-#tlt-encoded-model=<path to deployable_model>
+#tlt-encoded-model=<path to etao_model>
 #tlt-model-key=nvidia_tlt
 int8-calib-file=/opt/nvidia/deepstream/deepstream-6.0/samples/models/Primary_Detector/cal_trt.bin
 model-engine-file=lpdnet_usa.engine
 infer-dims=3;480;640
 uff-input-blob-name=Input
+#uff-input-blob-name=input_1
 batch-size=16
 ## 0=FP32, 1=INT8, 2=FP16 mode
-network-mode=2
+network-mode=1
 num-detected-classes=1
 ##1 Primary 2 Secondary
-process-mode=2
+process-mode=1
 interval=0
-gie-unique-id=4
+gie-unique-id=1
 #0 detector 1 classifier 2 segmentatio 3 instance segmentation
 network-type=0
-operate-on-gie-id=1
-operate-on-class-ids=0
+#operate-on-gie-id=1
+#operate-on-class-ids=0
 cluster-mode=3
-output-blob-names=BatchedNMS
-parse-bbox-func-name=NvDsInferParseCustomBatchedNMSTLT
-custom-lib-path=libnvds_infercustomparser_tao.so
+output-blob-names=output_cov/Sigmoid;output_bbox/BiasAdd
+input-object-min-height=30
+input-object-min-width=40
 #enable-dla=1
 
 [class-attrs-all]

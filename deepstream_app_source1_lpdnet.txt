@@ -111,9 +111,9 @@ enable=1
 model-engine-file=lpdnet_usa.engine
 gpu-id=0
 batch-size=4
-gie-unique-id=4
-operate-on-gie-id=1
-operate-on-class-ids=0;
+gie-unique-id=1
+#operate-on-gie-id=1
+#operate-on-class-ids=0;
 config-file=config_infer_primary_lpdnet.txt
 
 [tracker]
